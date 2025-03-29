@@ -41,6 +41,7 @@
 #include "google/protobuf/io/zero_copy_stream_impl_lite.h"
 
 #include "google/protobuf/testing/googletest.h"
+#include "google/protobuf/port.h"
 
 
 // Must be included last.
