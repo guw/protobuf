@@ -1,3 +1,4 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
 load("//bazel:proto_library.bzl", "proto_library")
 load("//bazel/toolchains:proto_lang_toolchain.bzl", "proto_lang_toolchain")
 
@@ -132,5 +133,16 @@ cc_binary(
         "manual",
         "nobuilder",
         "notap",
+    ],
+)
+
+bzl_library(
+    name = "declare_generated_files_bzl",
+    srcs = ["declare_generated_files.bzl"],
+    parse_tests = False,
+    visibility = ["//visibility:private"],
+    deps = [
+        "//bazel/common:proto_common_bzl",
+        "//bazel/common:proto_info_bzl",
     ],
 )
